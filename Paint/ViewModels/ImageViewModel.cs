@@ -24,7 +24,7 @@ namespace Paint.ViewModels
 
         public void Dispose()
         {
-            
+            _image?.Dispose();
         }
     }
 }
