@@ -12,6 +12,30 @@
     <Design.DataContext>
         <vm:MainWindowViewModel/>
     </Design.DataContext>
+    <Window.KeyBindings>
+        <KeyBinding Command="{Binding FileNewCommand}" Gesture="Ctrl+N"></KeyBinding>
+        <KeyBinding Command="{Binding FileOpenCommand}" Gesture="Ctrl+O"></KeyBinding>
+        <KeyBinding Command="{Binding FileSaveCommand}" Gesture="Ctrl+S"></KeyBinding>
+        <KeyBinding Command="{Binding FileExitCommand}" Gesture="Alt+F4"></KeyBinding>
+        <KeyBinding Command="{Binding EditUndoCommand}" Gesture="Ctrl+Z"></KeyBinding>
+        <KeyBinding Command="{Binding EditRepeatCommand}" Gesture="F4"></KeyBinding>
+        <KeyBinding Command="{Binding EditCutCommand}" Gesture="Ctrl+X"></KeyBinding>
+        <KeyBinding Command="{Binding EditCopyCommand}" Gesture="Ctrl+C"></KeyBinding>
+        <KeyBinding Command="{Binding EditPasteCommand}" Gesture="Ctrl+V"></KeyBinding>
+        <KeyBinding Command="{Binding EditClearSelectionCommand}" Gesture="Delete"></KeyBinding>
+        <KeyBinding Command="{Binding EditSelectAllCommand}" Gesture="Ctrl+A"></KeyBinding>
+        <KeyBinding Command="{Binding ViewToolBoxCommand}" Gesture="Ctrl+T"></KeyBinding>
+        <KeyBinding Command="{Binding ViewColorBoxCommand}" Gesture="Ctrl+L"></KeyBinding>
+        <KeyBinding Command="{Binding ViewZoomNormalSizeCommand}" Gesture="Ctrl+PageUp"></KeyBinding>
+        <KeyBinding Command="{Binding ViewZoomLargeSizeCommand}" Gesture="Ctrl+PageDown"></KeyBinding>
+        <KeyBinding Command="{Binding ViewZoomShowGridCommand}" Gesture="Ctrl+G"></KeyBinding>
+        <KeyBinding Command="{Binding ViewZoomViewBitmapCommand}" Gesture="Ctrl+F"></KeyBinding>
+        <KeyBinding Command="{Binding ImageFlipRotateCommand}" Gesture="Ctrl+R"></KeyBinding>
+        <KeyBinding Command="{Binding ImageStretchSkewCommand}" Gesture="Ctrl+W"></KeyBinding>
+        <KeyBinding Command="{Binding ImageInvertColorsCommand}" Gesture="Ctrl+I"></KeyBinding>
+        <KeyBinding Command="{Binding ImageAttributesCommand}" Gesture="Ctrl+E"></KeyBinding>
+        <KeyBinding Command="{Binding ImageClearImageCommand}" Gesture="Ctrl+Shift+N"></KeyBinding>
+    </Window.KeyBindings>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_File">
