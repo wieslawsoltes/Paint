@@ -17,9 +17,13 @@ namespace Paint
         {
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
+                var mainWindowViewModel = new MainWindowViewModel();
+
+                mainWindowViewModel.New();
+
                 desktop.MainWindow = new MainWindow
                 {
-                    DataContext = new MainWindowViewModel(),
+                    DataContext = mainWindowViewModel
                 };
             }
 
