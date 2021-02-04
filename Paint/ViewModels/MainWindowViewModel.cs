@@ -1,15 +1,17 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using ReactiveUI;
-using Image = SixLabors.ImageSharp.Image;
 
 namespace Paint.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
+        private ImageViewModel? _image;
+
         public MainWindowViewModel()
         {
             FileNewCommand = ReactiveCommand.CreateFromTask(async () =>
@@ -22,13 +24,15 @@ namespace Paint.ViewModels
                 var dlg = new OpenFileDialog();
 
                 var paths = await dlg.ShowAsync(GetWindow());
-                if (paths is not null && paths.Length > 0)
+                if (paths is not null && paths.Length == 1)
                 {
-                    foreach (var path in paths)
+                    try
                     {
-                        using var image = Image.Load(path);
-
-                        // TODO:
+                        Image = ImageViewModel.Create(paths[0]);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex);
                     }
                 }
             });
@@ -255,6 +259,12 @@ namespace Paint.ViewModels
 
         public ICommand HelpAboutPaintCommand { get; }
 
+        public ImageViewModel? Image
+        {
+            get => _image;
+            set => this.RaiseAndSetIfChanged(ref _image, value);
+        }
+        
         private static Window? GetWindow()
         {
             if (Application.Current.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime lifetime)

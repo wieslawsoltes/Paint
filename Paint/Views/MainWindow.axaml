@@ -100,9 +100,10 @@
                     <Border BoxShadow="4 11 30 1 #3F000000"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center">
-                        <Panel Background="White" 
-                               Width="600" 
-                               Height="400" 
+                        <Panel DataContext="{Binding Image}"
+                               Background="White" 
+                               Width="{Binding Width, FallbackValue=600}" 
+                               Height="{Binding Height, FallbackValue=400}" 
                                HorizontalAlignment="Center" 
                                VerticalAlignment="Center"/>
                     </Border>

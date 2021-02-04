@@ -1,22 +1,30 @@
-﻿using ReactiveUI;
+﻿using System;
+using ReactiveUI;
+using SixLabors.ImageSharp;
 
 namespace Paint.ViewModels
 {
-    public class ImageViewModel : ViewModelBase
+    public class ImageViewModel : ViewModelBase, IDisposable
     {
-        private double _width;
-        private double _height;
+        private Image _image;
 
-        public double Width
+        private ImageViewModel(Image image)
         {
-            get => _width;
-            set => this.RaiseAndSetIfChanged(ref _width, value);
+            _image = image;
+        }
+        
+        public double Width => _image.Width;
+
+        public double Height => _image.Height;
+
+        public static ImageViewModel Create(string path)
+        {
+            return new(Image.Load(path));
         }
 
-        public double Height
+        public void Dispose()
         {
-            get => _height;
-            set => this.RaiseAndSetIfChanged(ref _height, value);
+            
         }
     }
 }
