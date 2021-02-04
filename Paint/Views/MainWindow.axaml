@@ -21,7 +21,17 @@
                 <MenuItem Header="E_xit" Command="{Binding FileExitCommand}" InputGesture="Alt+F4"/>
             </MenuItem>
             <MenuItem Header="_Edit">
-                
+                <MenuItem Header="_Undo" Command="{Binding EditUndoCommand}" InputGesture="Ctrl+Z"/>
+                <MenuItem Header="_Repeat" Command="{Binding EditRepeatCommand}" InputGesture="F4"/>
+                <Separator/>
+                <MenuItem Header="Cu_t" Command="{Binding EditCutCommand}" InputGesture="Ctrl+X"/>
+                <MenuItem Header="_Copy" Command="{Binding EditCopyCommand}" InputGesture="Ctrl+C"/>
+                <MenuItem Header="_Paste" Command="{Binding EditPasteCommand}" InputGesture="Ctrl+V"/>
+                <MenuItem Header="C_lear Selection" Command="{Binding EditClearSelectionCommand}" InputGesture="Delete"/>
+                <MenuItem Header="Select _All" Command="{Binding EditSelectAllCommand}" InputGesture="Ctrl+A"/>
+                <Separator/>
+                <MenuItem Header="C_opy To..." Command="{Binding EditCopyToCommand}"/>
+                <MenuItem Header="Paste _From" Command="{Binding EditPasteFromCommand}"/>
             </MenuItem>
             <MenuItem Header="_Image">
                 

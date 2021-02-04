@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Avalonia;
@@ -50,6 +48,51 @@ namespace Paint.ViewModels
             });
 
             FileExitCommand = ReactiveCommand.Create(Exit);
+
+            EditUndoCommand = ReactiveCommand.CreateFromTask(async () =>
+            {
+                await Task.Yield();
+            });
+
+            EditRepeatCommand = ReactiveCommand.CreateFromTask(async () =>
+            {
+                await Task.Yield();
+            });
+
+            EditCutCommand = ReactiveCommand.CreateFromTask(async () =>
+            {
+                await Task.Yield();
+            });
+
+            EditCopyCommand = ReactiveCommand.CreateFromTask(async () =>
+            {
+                await Task.Yield();
+            });
+
+            EditPasteCommand = ReactiveCommand.CreateFromTask(async () =>
+            {
+                await Task.Yield();
+            });
+ 
+            EditClearSelectionCommand = ReactiveCommand.CreateFromTask(async () =>
+            {
+                await Task.Yield();
+            });
+
+            EditSelectAllCommand = ReactiveCommand.CreateFromTask(async () =>
+            {
+                await Task.Yield();
+            });
+
+            EditCopyToCommand = ReactiveCommand.CreateFromTask(async () =>
+            {
+                await Task.Yield();
+            });
+
+            EditPasteFromCommand = ReactiveCommand.CreateFromTask(async () =>
+            {
+                await Task.Yield();
+            });
         }
 
         public ICommand FileNewCommand { get; }
@@ -61,6 +104,24 @@ namespace Paint.ViewModels
         public ICommand FileSaveAsCommand { get; }
         
         public ICommand FileExitCommand { get; }
+
+        public ICommand EditUndoCommand { get; }
+
+        public ICommand EditRepeatCommand { get; }
+
+        public ICommand EditCutCommand { get; }
+
+        public ICommand EditCopyCommand { get; }
+
+        public ICommand EditPasteCommand { get; }
+
+        public ICommand EditClearSelectionCommand { get; }
+
+        public ICommand EditSelectAllCommand { get; }
+
+        public ICommand EditCopyToCommand { get; }
+
+        public ICommand EditPasteFromCommand { get; }
 
         private Window? GetWindow()
         {
