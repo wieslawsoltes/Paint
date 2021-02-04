@@ -7,6 +7,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using ReactiveUI;
+using Image = SixLabors.ImageSharp.Image;
 
 namespace Paint.ViewModels
 {
@@ -23,7 +24,16 @@ namespace Paint.ViewModels
             {
                 var dlg = new OpenFileDialog();
 
-                await dlg.ShowAsync(GetWindow());
+                var paths = await dlg.ShowAsync(GetWindow());
+                if (paths is not null && paths.Length > 0)
+                {
+                    foreach (var path in paths)
+                    {
+                        using var image = Image.Load(path);
+
+                        // TODO:
+                    }
+                }
             });
 
             FileSaveCommand = ReactiveCommand.CreateFromTask(async () =>
