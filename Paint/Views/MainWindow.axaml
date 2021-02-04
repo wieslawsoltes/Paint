@@ -34,6 +34,22 @@
                 <MenuItem Header="C_opy To..." Command="{Binding EditCopyToCommand}"/>
                 <MenuItem Header="Paste _From" Command="{Binding EditPasteFromCommand}"/>
             </MenuItem>
+            <MenuItem Header="_View">
+                <MenuItem Header="_Tool Box" Command="{Binding ViewToolBoxCommand}" InputGesture="Ctrl+T"/>
+                <MenuItem Header="_Color Box" Command="{Binding ViewColorBoxCommand}" InputGesture="Ctrl+L"/>
+                <MenuItem Header="_Status Bar" Command="{Binding ViewStatusBarCommand}"/>
+                <MenuItem Header="T_ext Toolbar" Command="{Binding ViewTextToolbarCommand}"/>
+                <Separator/>
+                <MenuItem Header="_Zoom">
+                    <MenuItem Header="_Normal Size" Command="{Binding ViewZoomNormalSizeCommand}" InputGesture="Ctrl+PageUp"/>
+                    <MenuItem Header="_Large Size" Command="{Binding ViewZoomLargeSizeCommand}" InputGesture="Ctrl+PageDown"/>
+                    <MenuItem Header="C_ustom..." Command="{Binding ViewZoomCustomCommand}"/>
+                    <Separator/>
+                    <MenuItem Header="Show _Grid" Command="{Binding ViewZoomShowGridCommand}" InputGesture="Ctrl+G"/>
+                    <MenuItem Header="Show T_humbnail" Command="{Binding ViewZoomShowThumbnailCommand}"/>
+                </MenuItem>
+                <MenuItem Header="_View Bitmap" Command="{Binding ViewZoomViewBitmapCommand}" InputGesture="Ctrl+F"/>
+            </MenuItem>
             <MenuItem Header="_Image">
                 
             </MenuItem>

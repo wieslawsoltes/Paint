@@ -1,5 +1,4 @@
-﻿
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Windows.Input;
 using Avalonia;
 using Avalonia.Controls;
@@ -93,6 +92,56 @@ namespace Paint.ViewModels
             {
                 await Task.Yield();
             });
+
+            ViewToolBoxCommand = ReactiveCommand.CreateFromTask(async () =>
+            {
+                await Task.Yield();
+            });
+
+            ViewColorBoxCommand = ReactiveCommand.CreateFromTask(async () =>
+            {
+                await Task.Yield();
+            });
+
+            ViewStatusBarCommand = ReactiveCommand.CreateFromTask(async () =>
+            {
+                await Task.Yield();
+            });
+
+            ViewTextToolbarCommand = ReactiveCommand.CreateFromTask(async () =>
+            {
+                await Task.Yield();
+            });
+
+            ViewZoomNormalSizeCommand = ReactiveCommand.CreateFromTask(async () =>
+            {
+                await Task.Yield();
+            });
+
+            ViewZoomLargeSizeCommand = ReactiveCommand.CreateFromTask(async () =>
+            {
+                await Task.Yield();
+            });
+
+            ViewZoomCustomCommand = ReactiveCommand.CreateFromTask(async () =>
+            {
+                await Task.Yield();
+            });
+
+            ViewZoomShowGridCommand = ReactiveCommand.CreateFromTask(async () =>
+            {
+                await Task.Yield();
+            });
+
+            ViewZoomShowThumbnailCommand = ReactiveCommand.CreateFromTask(async () =>
+            {
+                await Task.Yield();
+            });
+
+            ViewZoomViewBitmapCommand = ReactiveCommand.CreateFromTask(async () =>
+            {
+                await Task.Yield();
+            });
         }
 
         public ICommand FileNewCommand { get; }
@@ -123,6 +172,26 @@ namespace Paint.ViewModels
 
         public ICommand EditPasteFromCommand { get; }
 
+        public ICommand ViewToolBoxCommand { get; }
+
+        public ICommand ViewColorBoxCommand { get; }
+
+        public ICommand ViewStatusBarCommand { get; }
+
+        public ICommand ViewTextToolbarCommand { get; }
+
+        public ICommand ViewZoomNormalSizeCommand { get; }
+
+        public ICommand ViewZoomLargeSizeCommand { get; }
+
+        public ICommand ViewZoomCustomCommand { get; }
+
+        public ICommand ViewZoomShowGridCommand { get; }
+
+        public ICommand ViewZoomShowThumbnailCommand { get; }
+
+        public ICommand ViewZoomViewBitmapCommand { get; }
+        
         private Window? GetWindow()
         {
             if (Application.Current.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime lifetime)
