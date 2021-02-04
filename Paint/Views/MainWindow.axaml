@@ -104,7 +104,7 @@
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center">
                         <c:ImagePanel DataContext="{Binding Image}"
-                                      Background="White" 
+                                      Background="Transparent" 
                                       Width="{Binding Width, FallbackValue=600}" 
                                       Height="{Binding Height, FallbackValue=400}" 
                                       HorizontalAlignment="Center" 
