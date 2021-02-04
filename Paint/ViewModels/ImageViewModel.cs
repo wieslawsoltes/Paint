@@ -33,6 +33,11 @@ namespace Paint.ViewModels
             return new(Image.Load(path));
         }
 
+        public static ImageViewModel Create(Image image)
+        {
+            return new(image);
+        }
+
         public void Invalidate()
         {
             _bitmap?.Dispose();
