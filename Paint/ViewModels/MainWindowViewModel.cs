@@ -71,8 +71,7 @@ namespace Paint.ViewModels
 
             return null;
         }
-        
-        
+
         private void Exit()
         {
             if (Application.Current.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime lifetime)
