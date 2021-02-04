@@ -14,7 +14,6 @@ namespace Paint
         public static AppBuilder BuildAvaloniaApp()
             => AppBuilder.Configure<App>()
                 .UsePlatformDetect()
-                .UseManagedSystemDialogs()
                 //.UseManagedSystemDialogs()
                 .With(new Win32PlatformOptions()
                 {
