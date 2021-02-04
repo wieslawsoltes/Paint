@@ -3,6 +3,7 @@
         xmlns:vm="using:Paint.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:paz="using:Avalonia.Controls.PanAndZoom"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Paint.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
@@ -44,12 +45,18 @@
             </MenuItem>
         </Menu>
         <Panel Background="LightGray">
-            <Panel Background="White" 
-                   Margin="2" 
-                   Width="600" 
-                   Height="400" 
-                   HorizontalAlignment="Left" 
-                   VerticalAlignment="Top"/>
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                <paz:ZoomBorder Margin="2" 
+                                Stretch="None"
+                                VerticalAlignment="Stretch" 
+                                HorizontalAlignment="Stretch">
+                    <Panel Background="White" 
+                           Width="600" 
+                           Height="400" 
+                           HorizontalAlignment="Center" 
+                           VerticalAlignment="Center"/>
+                </paz:ZoomBorder>
+            </ScrollViewer>
         </Panel>
     </DockPanel>
 </Window>
