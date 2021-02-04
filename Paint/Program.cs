@@ -15,6 +15,11 @@ namespace Paint
             => AppBuilder.Configure<App>()
                 .UsePlatformDetect()
                 .UseManagedSystemDialogs()
+                //.UseManagedSystemDialogs()
+                .With(new Win32PlatformOptions()
+                {
+                    AllowEglInitialization = true
+                })
                 .LogToTrace()
                 .UseReactiveUI();
     }
