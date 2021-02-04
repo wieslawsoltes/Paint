@@ -40,7 +40,6 @@ namespace Paint.ViewModels
 
             FileSaveAsCommand = ReactiveCommand.CreateFromTask(async () =>
             {
-                
                 var dlg = new SaveFileDialog();
 
                 await dlg.ShowAsync(GetWindow());
