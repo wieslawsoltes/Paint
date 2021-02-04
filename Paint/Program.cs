@@ -14,10 +14,16 @@ namespace Paint
         public static AppBuilder BuildAvaloniaApp()
             => AppBuilder.Configure<App>()
                 .UsePlatformDetect()
-                //.UseManagedSystemDialogs()
+                .UseManagedSystemDialogs()
                 .With(new Win32PlatformOptions()
                 {
                     AllowEglInitialization = true
+                })
+                .With(new X11PlatformOptions()
+                {
+                })
+                .With(new MacOSPlatformOptions()
+                {
                 })
                 .LogToTrace()
                 .UseReactiveUI();
