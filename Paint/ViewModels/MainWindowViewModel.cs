@@ -5,6 +5,8 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using ReactiveUI;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Processing;
 
 namespace Paint.ViewModels
 {
@@ -16,6 +18,7 @@ namespace Paint.ViewModels
         {
             FileNewCommand = ReactiveCommand.CreateFromTask(async () =>
             {
+                New();
                 await Task.Yield();
             });
 
@@ -28,7 +31,9 @@ namespace Paint.ViewModels
                 {
                     try
                     {
-                        Image = ImageViewModel.Create(paths[0]);
+                        var image = ImageViewModel.Create(paths[0]);
+                        Image?.Dispose();
+                        Image = image;
                     }
                     catch (Exception ex)
                     {
@@ -264,7 +269,23 @@ namespace Paint.ViewModels
             get => _image;
             set => this.RaiseAndSetIfChanged(ref _image, value);
         }
-        
+
+        public void New()
+        {
+            try
+            {
+                var image = new Image<SixLabors.ImageSharp.PixelFormats.Rgba32>(600, 400);
+                var background = SixLabors.ImageSharp.PixelFormats.Rgba32.ParseHex("#FFFFFF");
+                image.Mutate(x => { x.BackgroundColor(background); });
+                Image?.Dispose();
+                Image = ImageViewModel.Create(image);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+
         private static Window? GetWindow()
         {
             if (Application.Current.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime lifetime)
