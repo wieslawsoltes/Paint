@@ -142,6 +142,52 @@ namespace Paint.ViewModels
             {
                 await Task.Yield();
             });
+
+            ImageFlipRotateCommand = ReactiveCommand.CreateFromTask(async () =>
+            {
+                await Task.Yield();
+            });
+            
+            ImageStretchSkewCommand = ReactiveCommand.CreateFromTask(async () =>
+            {
+                await Task.Yield();
+            });
+            
+            ImageInvertColorsCommand = ReactiveCommand.CreateFromTask(async () =>
+            {
+                await Task.Yield();
+            });
+            
+            ImageAttributesCommand = ReactiveCommand.CreateFromTask(async () =>
+            {
+                await Task.Yield();
+            });
+            
+            ImageClearImageCommand = ReactiveCommand.CreateFromTask(async () =>
+            {
+                await Task.Yield();
+            });
+            
+            ImageDrawOpaqueCommand = ReactiveCommand.CreateFromTask(async () =>
+            {
+                await Task.Yield();
+            });
+            
+            ColorsEditColorsCommand = ReactiveCommand.CreateFromTask(async () =>
+            {
+                await Task.Yield();
+            });
+            
+            HelpHelpTopicsCommand = ReactiveCommand.CreateFromTask(async () =>
+            {
+                await Task.Yield();
+            });
+            
+            HelpAboutPaintCommand = ReactiveCommand.CreateFromTask(async () =>
+            {
+                await Task.Yield();
+            });
+
         }
 
         public ICommand FileNewCommand { get; }
@@ -191,8 +237,26 @@ namespace Paint.ViewModels
         public ICommand ViewZoomShowThumbnailCommand { get; }
 
         public ICommand ViewZoomViewBitmapCommand { get; }
-        
-        private Window? GetWindow()
+
+        public ICommand ImageFlipRotateCommand { get; }
+
+        public ICommand ImageStretchSkewCommand { get; }
+
+        public ICommand ImageInvertColorsCommand { get; }
+
+        public ICommand ImageAttributesCommand { get; }
+
+        public ICommand ImageClearImageCommand { get; }
+
+        public ICommand ImageDrawOpaqueCommand { get; }
+
+        public ICommand ColorsEditColorsCommand { get; }
+
+        public ICommand HelpHelpTopicsCommand { get; }
+
+        public ICommand HelpAboutPaintCommand { get; }
+
+        private static Window? GetWindow()
         {
             if (Application.Current.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime lifetime)
             {
@@ -202,7 +266,7 @@ namespace Paint.ViewModels
             return null;
         }
 
-        private void Exit()
+        private static void Exit()
         {
             if (Application.Current.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime lifetime)
             {

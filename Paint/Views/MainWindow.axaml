@@ -51,13 +51,19 @@
                 <MenuItem Header="_View Bitmap" Command="{Binding ViewZoomViewBitmapCommand}" InputGesture="Ctrl+F"/>
             </MenuItem>
             <MenuItem Header="_Image">
-                
+                <MenuItem Header="_Flip/Rotate..." Command="{Binding ImageFlipRotateCommand}" InputGesture="Ctrl+R"/>
+                <MenuItem Header="_Stretch/Skew..." Command="{Binding ImageStretchSkewCommand}" InputGesture="Ctrl+W"/>
+                <MenuItem Header="_Invert Colors" Command="{Binding ImageInvertColorsCommand}" InputGesture="Ctrl+I"/>
+                <MenuItem Header="Attributes..." Command="{Binding ImageAttributesCommand}" InputGesture="Ctrl+E"/>
+                <MenuItem Header="_Clear Image" Command="{Binding ImageClearImageCommand}" InputGesture="Ctrl+Shift+N"/>
+                <MenuItem Header="_Draw Opaque" Command="{Binding ImageDrawOpaqueCommand}"/>
             </MenuItem>
             <MenuItem Header="_Colors">
-                
+                <MenuItem Header="_Edit Colors..." Command="{Binding ColorsEditColorsCommand}"/>
             </MenuItem>
             <MenuItem Header="_Help">
-                
+                <MenuItem Header="_Help Topics" Command="{Binding HelpHelpTopicsCommand}"/>
+                <MenuItem Header="_About Paint" Command="{Binding HelpAboutPaintCommand}"/>
             </MenuItem>
         </Menu>
         <Panel Background="LightGray">
