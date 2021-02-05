@@ -1,10 +1,6 @@
-﻿using System.IO;
-using Avalonia;
-using Avalonia.Controls;
+﻿using Avalonia.Controls;
 using Avalonia.Media;
-using Avalonia.Media.Imaging;
 using Paint.ViewModels;
-using SixLabors.ImageSharp;
 
 namespace Paint.Controls
 {
